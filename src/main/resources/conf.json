@@ -1,0 +1,31 @@
+{
+	"cliConfig": {
+		"startEverything": true
+	},
+	"cluster": {
+		"clusterType": "NONE",
+		"getVxApiConfFromCluster": false,
+		"clusterConf": {
+			"zookeeperHosts": "127.0.0.1",
+			"sessionTimeout": 20000,
+			"connectTimeout": 3000,
+			"rootPath": "io.vertx",
+			"vxApiConfPath": "/io.vertx/vx.api.gateway/conf",
+			"retry": {
+				"initialSleepTime": 100,
+				"intervalTimes": 10000,
+				"maxTimes": 5
+			}
+		}
+	},
+	"dataConfig": {
+		"provider_class": "com.szmirren.vxApi.core.common.DataSourceProviderOfDruid",
+		"url": "jdbc:oracle:thin:@127.0.0.1:1521:orcl",
+		"user": "vxuser",
+		"password": "vxpassword",
+		"driver_class": "oracle.jdbc.OracleDriver"
+	},
+	"clientConfig": {
+		"clientPort": 5256
+	}
+}
