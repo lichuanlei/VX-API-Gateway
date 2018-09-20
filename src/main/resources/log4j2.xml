@@ -8,7 +8,7 @@
 		<!-- 日志的打印级别 -->
 		<property name="LOG_LEVEL">info</property>
 		<!-- 制台的打印级别 -->
-		<property name="LOG_CONSOLE_LEVEL">info</property>
+		<property name="LOG_CONSOLE_LEVEL">error</property>
 		<!-- 程序的包名 -->
 		<property name="CODE_PACKAGE">com.szmirren.vxApi</property>
 	</properties>
@@ -26,7 +26,7 @@
 			filePattern="${LOG_HOME}/${LOG_HOME_HISTORY}/info/$${date:yyyy-MM}/%d{yyyy-MM-dd}-%i.log">
 			<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
 			<Filters>
-				<ThresholdFilter level="info" onMatch="DENY"
+				<ThresholdFilter level="warn" onMatch="DENY"
 					onMismatch="NEUTRAL" />
 				<ThresholdFilter level="info" onMatch="ACCEPT"
 					onMismatch="DENY" />
@@ -44,9 +44,9 @@
 			fileName="${LOG_HOME}/warn.log"
 			filePattern="${LOG_HOME}/${LOG_HOME_HISTORY}/warn/$${date:yyyy-MM}/%d{yyyy-MM-dd}-%i.log">
 			<Filters>
-				<ThresholdFilter level="info" onMatch="DENY"
+				<ThresholdFilter level="error" onMatch="DENY"
 					onMismatch="NEUTRAL" />
-				<ThresholdFilter level="info" onMatch="ACCEPT"
+				<ThresholdFilter level="warn" onMatch="ACCEPT"
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
